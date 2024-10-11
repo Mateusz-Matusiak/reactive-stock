@@ -1,0 +1,31 @@
+package pl.matusiak.stock.ui;
+
+import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.stage.Stage;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.ConfigurableApplicationContext;
+
+public class ChartApplication extends Application {
+
+    private ConfigurableApplicationContext applicationContext;
+
+    public ChartApplication() {
+    }
+
+    @Override
+    public void init() {
+        applicationContext = new SpringApplicationBuilder(StockUiApplication.class).run();
+    }
+
+    @Override
+    public void start(Stage stage) {
+        applicationContext.publishEvent(new StageReadyEvent(stage));
+    }
+
+    @Override
+    public void stop() {
+        applicationContext.stop();
+        Platform.exit();
+    }
+}

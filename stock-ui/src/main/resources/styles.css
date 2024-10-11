@@ -1,0 +1,17 @@
+/* VBox Styling */
+.vbox {
+    -fx-padding: 20;
+    -fx-spacing: 15;
+    -fx-background-color: lightgray;
+}
+
+/* LineChart Styling */
+.line-chart {
+    -fx-background-color: lightgray;
+    -fx-border-color: lightgray;
+    -fx-border-width: 2;
+}
+
+.axis {
+    -fx-tick-label-fill: #2c3e50;
+}
